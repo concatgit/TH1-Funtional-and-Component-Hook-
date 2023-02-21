@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
-function App() {
+// VD1 :(Tăng dần tuổi từ 5);
+/*
+export default function App() {
+  const [age, setAge] = useState(5);
+
+  const onChangeAge = () => {
+    setAge(age + 1);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <div>Tuổi là: {age}</div>
+      <div onClick={onChangeAge}>Tăng tuổi thêm 1</div>
     </div>
   );
 }
+*/
+// VD2(Tăng dần tuổi từ 5 tuổi và thay đổi tên)
+export default function App() {
+  const [age, setAge] = useState(5);
+  const [name, setName] = useState('');
 
-export default App;
+  const onChangeAge = () => {
+    setAge(age + 1);
+  };
+
+  const onChangeName = () => {
+    setName('Cee');
+  };
+
+  return (
+    <div className='container'>
+      <div>Xin chào: {name}</div>
+      <div>Tuổi là: {age}</div>
+      <div onClick={onChangeAge}>Tăng tuổi thêm 1</div>
+      <div onClick={onChangeName}>Hiển thị tên</div>
+    </div>
+  );
+}
